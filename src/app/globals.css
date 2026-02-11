@@ -25,3 +25,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body:has([data-auth-layout]) > header {
+  display: none;
+}
+
+body:has([data-auth-layout]) > main {
+  padding-top: 0;
+}
