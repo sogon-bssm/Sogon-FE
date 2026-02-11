@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const ChatInput = () => {
   return (
-    <div className="p-base gap-base flex w-full flex-col justify-end rounded-sm border border-gray-300 bg-white">
+    <div className="p-base gap-base mb-[3rem] flex w-full flex-col justify-end rounded-sm border border-gray-300 bg-white">
       <input
         type="text"
         placeholder="무엇이든 말해보세요!"
