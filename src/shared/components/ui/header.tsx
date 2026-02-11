@@ -21,6 +21,7 @@ const Header = () => {
         </Link>
       </nav>
       <button className="gap-xs flex cursor-pointer items-center">
+        {/* TODO: Replace with actual user data */}
         <p className="font-sans font-semibold text-gray-800">하린 님</p>
         <Image src="/icon/caret-down.svg" alt="드롭다운 표시자 아이콘" width={24} height={24} />
       </button>
