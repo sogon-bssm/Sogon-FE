@@ -13,7 +13,8 @@ const ChatPreview = ({ character, title, content, isEnd, date }: ChatPreviewProp
   const datetime = getTimeAgo(date);
   return (
     <div className="p-lg gap-xl flex cursor-pointer flex-row items-start rounded-sm border border-gray-300 bg-white hover:brightness-94">
-      <Image src="/icon/character-icon.svg" alt="캐릭터 아이콘" width={48} height={48} />
+      {/**todo: 캐릭터에 맞게 이미지 변경 */}
+      <Image src="/icon/character-icon.svg" alt="캐릭터 아이콘" width={48} height={48} />{' '}
       <div className="gap-xs flex flex-1 flex-col font-sans">
         <div className="gap-xs flex flex-row">
           <h2 className="truncate text-lg font-semibold text-gray-800">{title}</h2>
