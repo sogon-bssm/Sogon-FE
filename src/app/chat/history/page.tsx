@@ -1,4 +1,5 @@
 import ChatPreview from '@/features/chat/components/chatPreview';
+import SearchInput from '@/shared/components/ui/searchInput';
 
 const chatMock = [
   {
@@ -21,7 +22,9 @@ const chatMock = [
 const ChatHistory = () => {
   return (
     <div className="gap-md flex h-full w-full flex-col px-4 md:px-8 lg:px-[7.5rem]">
-      <div></div>
+      <div>
+        <SearchInput />
+      </div>
       <div className="gap-base flex h-full flex-col">
         {chatMock.map((item) => (
           <ChatPreview
