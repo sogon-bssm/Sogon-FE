@@ -1,7 +1,7 @@
 import Image from 'next/image';
 const SearchInput = () => {
   return (
-    <div className="p-sm gap-sm flex rounded-sm border border-gray-300 bg-white">
+    <div className="p-sm gap-sm flex w-[32rem] rounded-sm border border-gray-300 bg-white">
       <Image src="/icon/search.svg" alt="검색 아이콘" width={24} height={24} />
       <input
         type="text"
