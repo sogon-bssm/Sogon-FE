@@ -27,13 +27,12 @@ const ChatHistory = () => {
   const router = useRouter();
 
   return (
-    <div className="gap-md flex h-full w-full flex-col px-4 md:px-8 lg:px-[7.5rem]">
+    <div className="gap-xl flex h-full w-full flex-col px-4 md:px-8 lg:px-[7.5rem]">
       <div className="mt-lg flex w-full flex-row justify-between">
         <div className="gap-sm flex flex-row items-center">
           <button onClick={() => router.back()} className="cursor-pointer">
             <Image src="/icon/chevron-left.svg" alt="뒤로가기 아이콘" width={24} height={24} />
           </button>
-
           <h2 className="font-sans text-lg font-semibold">채팅 보관함</h2>
         </div>
         <SearchInput />
