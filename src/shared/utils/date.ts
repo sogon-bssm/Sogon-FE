@@ -1,5 +1,14 @@
 export const getTimeAgo = (date: string) => {
-  const diff = Date.now() - new Date(date).getTime();
+  const parsedDate = new Date(date);
+  if (isNaN(parsedDate.getTime())) {
+    return '';
+  }
+
+  const diff = Date.now() - parsedDate.getTime();
+  if (diff < 0) {
+    return '방금 전';
+  }
+
   const minutes = Math.floor(diff / 60000);
   if (minutes < 60) return `${minutes}분 전`;
 
