@@ -8,7 +8,7 @@ interface FrequencyBarCardProps {
 
 const FrequencyBarCard = ({ title, data }: FrequencyBarCardProps) => {
   return (
-    <div className="p-lg gap-md flex h-full w-full flex-col rounded-lg border border-gray-300">
+    <div className="p-lg gap-md flex w-full flex-col self-stretch rounded-lg border border-gray-300">
       <h2 className="font-sans text-lg font-semibold text-gray-800">{title}</h2>
       <div className="gap-sm flex flex-col">
         {data.map((item, idx) => (
