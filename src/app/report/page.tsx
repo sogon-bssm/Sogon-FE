@@ -12,7 +12,7 @@ const Report = () => {
   ];
 
   return (
-    <div className="gap-xl flex h-full w-full flex-col px-4 md:px-8 lg:px-[7.5rem]">
+    <div className="gap-xl pt-4xl flex h-full w-full flex-col justify-center px-4 md:px-8 lg:px-[7.5rem]">
       <div className="mt-lg gap-sm flex w-full flex-col justify-between">
         <PageHeader title="1월 분석 리포트" />
         <h3 className="text-md font-sans font-semibold text-gray-700">
