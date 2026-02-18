@@ -1,9 +1,6 @@
-'use client';
-
 import ChatPreview from '@/features/chat/components/chatPreview';
 import SearchInput from '@/shared/components/ui/searchInput';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import PageHeader from '@/shared/components/ui/pageHeader';
 
 const chatMock = [
   {
@@ -24,17 +21,10 @@ const chatMock = [
 ];
 
 const ChatHistory = () => {
-  const router = useRouter();
-
   return (
     <div className="gap-xl flex h-full w-full flex-col px-4 md:px-8 lg:px-[7.5rem]">
       <div className="mt-lg flex w-full flex-row justify-between">
-        <div className="gap-sm flex flex-row items-center">
-          <button onClick={() => router.back()} className="cursor-pointer">
-            <Image src="/icon/chevron-left.svg" alt="뒤로가기 아이콘" width={24} height={24} />
-          </button>
-          <h2 className="font-sans text-lg font-semibold">채팅 보관함</h2>
-        </div>
+        <PageHeader title="채팅 보관함" />
         <SearchInput />
       </div>
       <div className="gap-base flex h-full flex-col">

@@ -1,12 +1,9 @@
-'use client';
-
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import FrequencyBarCard from '@/features/report/components/frequencyBarCard';
 import TopicPieCard from '@/features/report/components/topicPieCard';
+import PageHeader from '@/shared/components/ui/pageHeader';
 
 const Report = () => {
-  const router = useRouter();
   const data = [
     { word: '피곤해', score: 52 },
     { word: '졸려', score: 40 },
@@ -17,12 +14,7 @@ const Report = () => {
   return (
     <div className="gap-xl flex h-full w-full flex-col px-4 md:px-8 lg:px-[7.5rem]">
       <div className="mt-lg gap-sm flex w-full flex-col justify-between">
-        <div className="gap-sm flex flex-row items-center">
-          <button onClick={() => router.back()} className="cursor-pointer">
-            <Image src="/icon/chevron-left.svg" alt="뒤로가기 아이콘" width={24} height={24} />
-          </button>
-          <h2 className="font-sans text-lg font-semibold text-gray-800">1월 분석 리포트</h2>
-        </div>
+        <PageHeader title="1월 분석 리포트" />
         <h3 className="text-md font-sans font-semibold text-gray-700">
           친구가 보는 나 리포트의 분석 결과야! 아래 분석 결과를 확인해 볼래?
         </h3>
