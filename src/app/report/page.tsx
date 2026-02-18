@@ -2,9 +2,17 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import FrequencyBarCard from '@/features/report/components/frequencyBarCard';
+import TopicPieCard from '@/features/report/components/topicPieCard';
 
 const Report = () => {
   const router = useRouter();
+  const data = [
+    { word: '피곤해', score: 52 },
+    { word: '졸려', score: 40 },
+    { word: '귀찮아', score: 22 },
+    { word: '찌증나', score: 10 },
+  ];
 
   return (
     <div className="gap-xl flex h-full w-full flex-col px-4 md:px-8 lg:px-[7.5rem]">
@@ -54,16 +62,10 @@ const Report = () => {
           </div>
         </div>
         <div className="gap-xl flex h-full w-full flex-col">
-          <div className="p-lg flex h-full w-full flex-col rounded-lg border border-gray-300">
-            <h2 className="font-sans text-lg font-semibold text-gray-800">너의 대화 성향 요약</h2>
-          </div>
-          <div className="p-lg flex h-full w-full flex-col rounded-lg border border-gray-300">
-            <h2 className="font-sans text-lg font-semibold text-gray-800">너의 대화 성향 요약</h2>
-          </div>
+          <FrequencyBarCard title="사용자가 자주 쓰는 단어" data={data} />
+          <FrequencyBarCard title="사용자의 주 감정" data={data} />
         </div>
-        <div className="gap-xl p-lg flex h-full w-full flex-col rounded-lg border border-gray-300 bg-white">
-          <h2 className="font-sans text-lg font-semibold text-gray-800">자주 사용하는 대화 주제</h2>
-        </div>
+        <TopicPieCard />
       </div>
     </div>
   );
