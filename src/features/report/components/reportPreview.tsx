@@ -1,5 +1,6 @@
 import { formatDate } from '@/shared/utils/date';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface reportPreviewProps {
   reportId: number;
@@ -29,22 +30,25 @@ const ReportPreview = ({ reportId, title, summary, analysis, createdAt }: report
         </h3>
       </div>
       <div className="gap-xs flex flex-col">
-        <div className="itmes-center flex flex-row justify-between">
+        <div className="flex flex-row items-center justify-between">
           <p className="font-sans text-sm font-medium text-gray-600">가장 많이 쓴 단어</p>
           <p className="font-sans text-sm font-medium text-gray-700">{analysis.frequentWord}</p>
         </div>
-        <div className="itmes-center flex flex-row justify-between">
+        <div className="flex flex-row items-center justify-between">
           <p className="font-sans text-sm font-medium text-gray-600">주요 감정</p>
           <p className="font-sans text-sm font-medium text-gray-700">{analysis.mainEmotion}</p>
         </div>
-        <div className="itmes-center flex flex-row justify-between">
+        <div className="flex flex-row items-center justify-between">
           <p className="font-sans text-sm font-medium text-gray-600">주요 대화 주제</p>
           <p className="font-sans text-sm font-medium text-gray-700">{analysis.mainTopic}</p>
         </div>
       </div>
-      <button className="text-md text-primary-700 cursor-pointer font-sans underline hover:brightness-90">
+      <Link
+        href={`/report?id=${reportId}`}
+        className="text-md text-primary-700 w-full cursor-pointer text-center font-sans underline hover:brightness-90"
+      >
         자세히 보기
-      </button>
+      </Link>
     </div>
   );
 };
