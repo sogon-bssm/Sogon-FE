@@ -6,6 +6,7 @@ const SearchInput = () => {
       <input
         type="text"
         placeholder="검색어를 입력해주세요"
+        aria-label="검색어"
         className="w-full font-sans text-sm font-medium text-gray-800 outline-none placeholder:text-gray-600"
       />
     </div>
