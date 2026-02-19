@@ -4,11 +4,22 @@ import TopicPieCard from '@/features/report/components/topicPieCard';
 import PageHeader from '@/shared/components/ui/pageHeader';
 
 const Report = () => {
-  const data = [
+  const chatTraits = [
+    { type: 'night', label: '밤 11시 이후 깊은 얘기' },
+    { type: 'night', label: '밤 11시 이후 깊은 얘기' },
+    { type: 'night', label: '밤 11시 이후 깊은 얘기' },
+  ];
+  const frequencyData = [
     { word: '피곤해', score: 52 },
     { word: '졸려', score: 40 },
     { word: '귀찮아', score: 22 },
     { word: '찌증나', score: 10 },
+  ];
+  const pieCardData = [
+    { name: '학교 이야기', value: 40 },
+    { name: '성적', value: 30 },
+    { name: '취미', value: 20 },
+    { name: '기타', value: 10 },
   ];
 
   return (
@@ -32,32 +43,28 @@ const Report = () => {
           <div className="border-primary-700 gap-md p-lg flex flex-col rounded-md border bg-white">
             <h2 className="font-sans text-lg font-semibold text-gray-800">너의 대화 성향 요약</h2>
             <div className="gap-sm flex flex-col">
-              <div className="gap-sm p-sm flex w-full flex-row rounded-sm border border-gray-300 bg-white">
-                <Image src="/icon/report/night.svg" alt="밤 아이콘" width={24} height={24} />
-                <p className="text-md font-sans font-medium text-gray-700">
-                  밤 11시 이후에 깊은 애기
-                </p>
-              </div>
-              <div className="gap-sm p-sm flex w-full flex-row rounded-sm border border-gray-300 bg-white">
-                <Image src="/icon/report/night.svg" alt="밤 아이콘" width={24} height={24} />
-                <p className="text-md font-sans font-medium text-gray-700">
-                  밤 11시 이후에 깊은 애기
-                </p>
-              </div>
-              <div className="gap-sm p-sm flex w-full flex-row rounded-sm border border-gray-300 bg-white">
-                <Image src="/icon/report/night.svg" alt="밤 아이콘" width={24} height={24} />
-                <p className="text-md font-sans font-medium text-gray-700">
-                  밤 11시 이후에 깊은 애기
-                </p>
-              </div>
+              {chatTraits.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="gap-sm p-sm flex w-full flex-row rounded-sm border border-gray-300 bg-white"
+                >
+                  <Image
+                    src={`/icon/report/${item.type}.svg`}
+                    alt={`${item.type} 아이콘`}
+                    width={24}
+                    height={24}
+                  />
+                  <p className="text-md font-sans font-medium text-gray-700">{item.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
         <div className="gap-xl flex h-full w-full flex-col">
-          <FrequencyBarCard title="사용자가 자주 쓰는 단어" data={data} />
-          <FrequencyBarCard title="사용자의 주 감정" data={data} />
+          <FrequencyBarCard title="사용자가 자주 쓰는 단어" data={frequencyData} />
+          <FrequencyBarCard title="사용자의 주 감정" data={frequencyData} />
         </div>
-        <TopicPieCard />
+        <TopicPieCard data={pieCardData} />
       </div>
     </div>
   );

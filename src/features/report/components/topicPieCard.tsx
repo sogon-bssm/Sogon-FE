@@ -2,15 +2,16 @@
 
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
-const data = [
-  { name: '학교 이야기', value: 40 },
-  { name: '성적', value: 30 },
-  { name: '취미', value: 20 },
-  { name: '기타', value: 10 },
-];
+interface TopicPieCardProps {
+  data: {
+    name: string;
+    value: number;
+  }[];
+}
+
 const COLORS = ['#FAE26D', '#FDF0A0', '#F5D845', '#E7CA48', '#D4B83A', '#FFF3B0', '#C8A82A'];
 
-const TopicPieCard = () => {
+const TopicPieCard = ({ data }: TopicPieCardProps) => {
   return (
     <div className="gap-xl p-lg flex w-full flex-col self-stretch rounded-lg border border-gray-300 bg-white">
       <h2 className="font-sans text-lg font-semibold text-gray-800">자주 사용하는 대화 주제</h2>
