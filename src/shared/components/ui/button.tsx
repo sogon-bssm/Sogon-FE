@@ -29,10 +29,10 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${baseStyle} ${variantStyles[variant]} ${icon ? 'flex items-center justify-center gap-2' : ''}`}
+      className={`${baseStyle} ${variantStyles[variant]} ${icon ? 'relative flex items-center' : ''}`}
     >
-      {icon && <span className="flex items-center">{icon}</span>}
-      {children}
+      {icon && <span className="absolute left-5 flex items-center">{icon}</span>}
+      {icon ? <span className="w-full text-center">{children}</span> : children}
     </button>
   );
 }
