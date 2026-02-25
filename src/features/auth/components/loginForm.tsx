@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import Button from '@/shared/components/ui/button';
 import Input from '@/shared/components/ui/input';
 
@@ -57,7 +58,7 @@ export default function LoginForm() {
         <Button
           type="button"
           variant="oauth"
-          icon={<img src="/icon/google.png" alt="Google" className="h-6 w-6" />}
+          icon={<Image src="/icon/google.png" alt="Google" width={24} height={24} />}
         >
           구글로 로그인하기
         </Button>
