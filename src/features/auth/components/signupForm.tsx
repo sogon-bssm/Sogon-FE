@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '@/shared/components/ui/button';
 import Input from '@/shared/components/ui/input';
+import Image from 'next/image';
 
 export default function SignupForm() {
   const [email, setEmail] = useState('');
@@ -25,7 +26,7 @@ export default function SignupForm() {
     <form onSubmit={handleSignup} className="mx-auto flex w-[584px] flex-col">
       {/* 제목 */}
       <div className="mb-[48px]">
-        <h1 className="text-2xl leading-tight font-bold whitespace-pre-line text-shadow-zinc-800">
+        <h1 className="text-2xl leading-tight font-bold whitespace-pre-line text-zinc-800">
           {'소곤에 오신 것을 환영합니다!\n회원 가입을 진행해 주세요!'}
         </h1>
       </div>
@@ -48,7 +49,7 @@ export default function SignupForm() {
               placeholder="이메일로 받은 인증 번호를 입력해 주세요."
               value={emailCode}
               onChange={(e) => setEmailCode(e.target.value)}
-              className="h-[46px] flex-1 rounded-sm border border-zinc-400 px-3 font-['Pretendard'] text-sm text-zinc-500"
+              className="h-[46px] flex-1 rounded-sm border border-zinc-400 bg-white px-3 font-['Pretendard'] text-sm text-zinc-500"
             />
             <button
               type="button"
@@ -85,7 +86,7 @@ export default function SignupForm() {
         <Button
           type="submit"
           variant="oauth"
-          icon={<img src="/icon/google.png" alt="Google" className="h-6 w-6" />}
+          icon={<Image src="/icon/google.png" alt="Google" width={20} height={20} />}
         >
           구글로 로그인하기
         </Button>
