@@ -20,7 +20,7 @@ export default function Input({ type, placeholder, value, onChange, label }: Inp
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="h-[46px] w-full rounded-sm border border-zinc-400 px-3 font-['Pretendard'] text-sm text-zinc-500"
+        className="h-[46px] w-full rounded-sm border border-zinc-400 bg-white px-3 font-['Pretendard'] text-sm text-zinc-500"
       />
     </div>
   );
