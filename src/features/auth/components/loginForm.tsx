@@ -13,7 +13,7 @@ export default function LoginForm() {
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('로그인 시도:', { email, password });
+    console.log('로그인 시도:', { email });
     // 나중에 API 넣을 자리
     router.push('/main');
   };
@@ -58,6 +58,7 @@ export default function LoginForm() {
         <Button
           type="button"
           variant="oauth"
+          onClick={handleGoogleLogin}
           icon={<Image src="/icon/google.png" alt="Google" width={24} height={24} />}
         >
           구글로 로그인하기

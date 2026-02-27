@@ -9,13 +9,14 @@ import Image from 'next/image';
 export default function SignupForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
   const [emailCode, setEmailCode] = useState('');
   const router = useRouter();
 
   const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('회원가입 시도:', { email, password });
-    router.push('/type');
+    console.log('회원가입 시도:', { email });
+    router.push('/typeSetting');
   };
 
   const handleGoogleLogin = () => {
@@ -72,8 +73,8 @@ export default function SignupForm() {
           type="password"
           label="비밀번호 확인"
           placeholder="비밀번호를 다시 한 번 입력해 주세요."
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={passwordConfirm}
+          onChange={(e) => setPasswordConfirm(e.target.value)}
         />
 
         <Button type="submit" variant="primary">
@@ -84,8 +85,9 @@ export default function SignupForm() {
       {/* 구글 로그인 */}
       <div className="mt-[48px]">
         <Button
-          type="submit"
+          type="button"
           variant="oauth"
+          onClick={handleGoogleLogin}
           icon={<Image src="/icon/google.png" alt="Google" width={20} height={20} />}
         >
           구글로 로그인하기
