@@ -4,18 +4,22 @@ interface InputProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label?: string;
+  id?: string;
 }
 
-export default function Input({ type, placeholder, value, onChange, label }: InputProps) {
+export default function Input({ type, placeholder, value, onChange, label, id }: InputProps) {
+  const inputId = id ?? label;
+
   return (
     <div className="flex w-[584px] flex-col items-start justify-start gap-[5px]">
       {label && (
-        <label className="items-start justify-start font-['Pretendard'] text-xs text-zinc-800">
+        <label htmlFor={inputId} className="items-start justify-start font-['Pretendard'] text-xs text-zinc-800">
           {label}
         </label>
       )}
 
       <input
+        id={inputId}
         type={type}
         placeholder={placeholder}
         value={value}
