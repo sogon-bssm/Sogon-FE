@@ -23,6 +23,9 @@ const config: Config = {
           700: '#373738',
           800: '#1C1C1D', // black
         },
+        sementic: {
+          red: '#B7747A',
+        },
       },
       spacing: {
         xs: '0.25rem', // 4px
